@@ -56,6 +56,9 @@ Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
 			{{/if}}
 			<div class="connUs-profileData-img-cont">
 				<img class="connUs-profileData-img" src="{{#if data.profileDataList.profileImgUrl}}{{data.profileDataList.profileImgUrl}}{{else}}//localhost/chatClient/img/photo.jpg{{/if}}"/>
+				{{#if data.profileDataList.myProfile}}
+    				<div class="profileImg-edit-btn"></div>
+                {{/if}}
 				{{#compare  data.profileDataList.myProfile true operator="!="}}
 				    {{#compare data.profileDataList.friendStatus null operator="=="}}
 				    	<div class="connUs-connect-btn" type="connect">Connect</div>
@@ -77,8 +80,43 @@ Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
 				<input type="text" class="profile-gender" value="{{data.profileDataList.gender}}"/>
 				<input type="text" class="profile-age" value="{{data.profileDataList.age}}"/>
 				<input type="date" class="profile-dob" min="1950-01-31" max="2006-12-31" value="{{data.profileDataList.dob}}"/>
+				
+				<select onchange="print_state('connUs-state',this.selectedIndex);" id="connUs-country" name ="country"></select>
+				<select name ="state" id ="connUs-state"></select>
 			</div>
 		</div>
+		<div class="connUs-upload-picCont">
+		    <div class="upload-pic-close-icon">X</div>
+		    <div class="upload-crop-cont">
+		      <div id="upload-crop-img"></div>
+		      <div class="upload-crop-img-close"></div>
+		      <div class="upload-crop-img-conform"></div>
+		    </div>
+		    <div class="upload-wrapper">
+    		    <div class="upload-cont">
+        		    <form id="profileImg-edit">
+        		        <div class="upload-icon"></div>
+                        <div class="upload-txt">upload from your device</div>
+                        <input id="profileImgfile" type="file" name="file" />
+                    </form>
+        		    <div class="upload-line"></div>
+        		    <div class="upload-or-txt">or</div>
+        		    <div class="upload-line"></div>
+    		    </div>
+		        <div class="display-img-wrapper"></div>
+		   </div>
+		</div>
+    {{/if}}
+{{/if}}
+</script>
+<script id="displayPhotos-hb-template" type="text/x-handlebars-template">
+{{#if data}}
+    {{#if data.photosList}}
+       <div class="connUs-display-img-cont">
+          {{#each data.photosList}}
+               <img class="connUs-display-Img" alt="{{desc}}" src="{{imgUrl}}" data-image="{{imgUrl}}" data-description="{{desc}} <br>{{dateAndTime}}"/>
+          {{/each}}
+       </div>
     {{/if}}
 {{/if}}
 </script>

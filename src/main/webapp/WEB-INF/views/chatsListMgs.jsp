@@ -19,28 +19,25 @@
 	Handlebars.registerHelper('renderMap', function(commType, index, address) {
 		if(commType == "map")
 		{
-			var htmlStr = "<div id='chat-map'></div>";
+		    var mapId = "chat-map" + index;
+			var htmlStr = "<div class='chat-map' id=" + mapId + "></div>";
 			setTimeout(function(){
 				$($(".connUs-chatsListMgs-msg")[index]).before(htmlStr);
 			
 				var geocoder = new google.maps.Geocoder();
 			    geocoder.geocode( { 'address': address}, function(results, status) {
-			      if (status == google.maps.GeocoderStatus.OK)
-			      {
-				        var latitude = results[0].geometry.location.lat();
-				        var longitude = results[0].geometry.location.lng();
-				        initialize(latitude,longitude);
-			      }
+    			      if (status == google.maps.GeocoderStatus.OK)
+    			      {
+    				        var latitude = results[0].geometry.location.lat();
+    				        var longitude = results[0].geometry.location.lng();
+    				        initialize(mapId, latitude, longitude);
+    			      }
 			    });
 			},100);
 		}
-		else
-		{
-			$("#chat-map").remove();
-		}
 	});
 	
-	function initialize(latitude,longitude) {
+	function initialize(mapId, latitude, longitude) {
         var latlng = new google.maps.LatLng(latitude,longitude);
 
         var myOptions = {
@@ -49,7 +46,7 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           mapTypeControl: false
         };
-        var map = new google.maps.Map(document.getElementById("chat-map"), myOptions);
+        var map = new google.maps.Map(document.getElementById(mapId), myOptions);
 
         var marker = new google.maps.Marker({
           position: latlng, 

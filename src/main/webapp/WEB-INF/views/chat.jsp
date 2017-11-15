@@ -27,20 +27,18 @@
     
     <div class="connUs-chatBox-outerWrapper">
     	<div class="connUs-chatBox-head-cont">
+    	    <div class="connUs-chatBox-online"></div>
         	<div class="connUs-chatBox-head">Chat</div>
         	<div class="connUs-chatBox-location"></div>
        	</div>
         <div class="connUs-chatBox-wrapper">
 			<div class="connUs-chatsListMgs-inner-wrapper"></div>
+            <div id="map-cont"></div>
 			<div class="connUs-chatsListMgs-input-cont">
 			     <div class="connUs-smiley"></div>
 			    <input type="text" class="connUs-chatsListMgs-input" placeholder="Send a Message" data-emojiable="true"/>
 			    <div class="connUs-chatsListMgs-submit">></div>
 			</div>
-			<div class="connUs-maps-cont">
-        		<div id="map-cont"></div>
-        		<div class="connUs-chatsListMgs-submit">Send</div>
-        	</div>
         </div>
     </div>
 

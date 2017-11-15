@@ -7,10 +7,6 @@
 		<div class="menu-cont">
 			<div class="connUs-basicInfo">
 		        <img class="connUs-profile-img" src="//localhost/chatClient/img/photo.jpg"/>
-		        <form id="profileImg-edit">
-			        <div class="profileImg-edit-btn"></div>
-			        <input id="profileImgfile" type="file" name="file" />
-	    		</form>
 		        <div class="connUs-profile-name"></div>
 		    </div>
 		    

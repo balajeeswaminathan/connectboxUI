@@ -14,6 +14,7 @@
     <link href="//localhost/chatClient/css/feed.css" rel="stylesheet">
     <link href="//localhost/chatClient/css/photos.css" rel="stylesheet">
 	<link href="//localhost/chatClient/css/unite-gallery.css" rel="stylesheet">
+	<link href="//localhost/chatClient/css/lib/croppie.css" rel="stylesheet">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
@@ -23,6 +24,8 @@
     <script src="//localhost/chatClient/js/profile.js"></script>
     <script src="//localhost/chatClient/js/feed.js"></script>
     
+    <script src="//localhost/chatClient/js/plugins/croppie.js"></script>
+    <script src="//localhost/chatClient/js/plugins/location.js"></script>
     <script src="//localhost/chatClient/js/plugins/unitegallery.js"></script>
     <script src="//localhost/chatClient/js/plugins/ug-theme-tiles.js"></script>
     
@@ -41,7 +44,12 @@
     	</div>
     	<div class="connUs-profileData-wrapper"></div>
 	    <div class="connUs-feedList-wrapper"></div>
-	    <div class="connUs-friendsListAll-wrapper"></div>
+	    <div class="connUs-friendsListAll-wrapper">
+	        <div class="connUs-frndstext">Friends</div>
+	        <div class="connUs-active-frndstext">Active Friends</div>
+	        <div class="connUs-friendsList-innerAll-wrapper"></div>
+	        <div class="connUs-friendsList-online-wrapper"></div>
+	    </div>
 	    <div class="connUs-friendsListRequest-wrapper"></div>
 	    <div class="connUs-ptos-wrapper">
 	        <form id="connUs-addPtos-uploadCont">

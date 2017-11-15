@@ -7,6 +7,7 @@
     <script src="//localhost/chatClient/js/index.js"></script>
     <link href="//localhost/chatClient/css/index.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
+    <script src="//localhost/chatClient/js/plugins/location.js"></script>
 </head>
 <body>
     <div class="connUs-header-cont">
